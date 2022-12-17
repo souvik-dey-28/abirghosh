@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abir-Ghosh (JUNIOR SCIENTIST)</title>
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- ===== BOX ICONS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <!-- ===== FAV ICONS ===== -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+
+
+
+
+
+    <link rel="icon" type="image/x-icon"
+        href="a1.jpg"
+        style="height:168 px; width: 168px;" alt="">
+
+    <style>
+        /*===== GOOGLE FONTS =====*/
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Signika+Negative:wght@300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Capriola&family=Kanit:wght@300&family=Signika+Negative:wght@300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Capriola&family=Do+Hyeon&family=Kanit:wght@300&family=Signika+Negative:wght@300&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            scroll-padding-top: 2rem;
+            font-family: 'Capriola', sans-serif;
+        }
+
+        /*===== VARIABLE CSS =====*/
+        :root {
+            --header-height: 3rem;
+
+            /*===== colors =====*/
+            --main-color: #647bff;
+            --body-color: #090a1a;
+            --container-color: #171b3c;
+            --heading-color: #222321;
+            --box-color: #0d0f26;
+            --bg-color: #fff;
+        }
+
+        body {
+            color: var(--bg-color);
+            background-color: var(--body-color);
+        }
+
+        html::-webkit-scrollbar {
+            width: 0.5rem;
+            background: transparent;
+        }
+
+        html::-webkit-scrollbar-thumb {
+            width: 0.5rem;
+            background: var(--heading-color);
+        }
+
+        img {
+            width: 100%;
+        }
+
+        section {
+            padding: 3rem 0 2rem;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: auto;
+            width: 100%;
+        }
+
+        /*===== Header =====*/
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .header-active {
+            background: var(--box-color);
+            transition: 0.4s;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--main-color);
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            column-gap: 1.5rem;
+        }
+
+        .nav-link {
+            font-size: 0.94rem;
+            padding: 4px 8px;
+            border-radius: 0.2rem;
+            color: var(--bg-color);
+        }
+
+        .nav-link:hover {
+            color: var(--main-color);
+            background: var(--container-color);
+        }
+
+        /*===== Menu Icon =====*/
+        .menu-icon {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            row-gap: 5px;
+            cursor: pointer;
+            z-index: 200;
+            transition: 0.3s;
+        }
+
+        .menu-icon div {
+            display: block;
+            background: var(--bg-color);
+            height: 2px;
+            width: 24px;
+            transition: 0.3s;
+        }
+
+        .move .line1 {
+            transform: rotate(-45deg) translate(-5px, 5px);
+        }
+
+        .move .line2 {
+            opacity: 0;
+        }
+
+        .move .line3 {
+            transform: rotate(45deg) translate(-5px, -5px);
+        }
+
+        /*===== Home =====*/
+        .home {
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 7rem;
+        }
+
+        .home-content {
+            position: relative;
+            max-width: 600px;
+            width: 100%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .home-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: #98a7fc;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            color: gray;
+            opacity: 50%;
+        }
+
+        .home-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .home-text h3 {
+            position: relative;
+            display: flex;
+            align-items: center;
+            column-gap: 0.5rem;
+            font-size: 1.1rem;
+            color: var(--main-color);
+        }
+
+        .home-text h3::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%);
+            left: -15px;
+            height: 1px;
+            width: 20px;
+            background: var(--main-color);
+        }
+
+        .home-text h3::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%);
+            right: -35px;
+            height: 1px;
+            width: 20px;
+            background: var(--main-color);
+        }
+
+        .home-text h2 {
+            font-size: 3.5rem;
+            line-height: 4.8rem;
+            font-family: 'Do Hyeon', sans-serif;
+        }
+
+        .home-text .color-font {
+            font-family: 'Do Hyeon', sans-serif;
+            color: var(--main-color);
+        }
+
+        .home-text p {
+            font-size: 0.938rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .home-text .color {
+            color: var(--main-color);
+        }
+
+        .social {
+            display: flex;
+            align-items: center;
+            column-gap: 0.5rem;
+        }
+
+        .social .bx {
+            font-size: 1.3rem;
+            padding: 10px;
+            border-radius: 50%;
+            color: var(--bg-color);
+            background: var(--container-color);
+        }
+
+        .social .bx:hover {
+            background: var(--main-color);
+            transition: 0.3s all linear;
+        }
+
+        /*===== Heading =====*/
+        .heading {
+            font-size: 5rem;
+            text-transform: uppercase;
+            color: var(--heading-color);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .about-data span {
+            font-size: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: var(--main-color);
+        }
+
+        .about-data h2 {
+            font-size: 2rem;
+            line-height: 2.6rem;
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+
+        .btn {
+            font-size: 0.97rem;
+            display: inline-flex;
+            align-items: center;
+            column-gap: 0.5rem;
+            color: var(--bg-color);
+            background: var(--main-color);
+            padding: 12px 16px;
+            border-radius: 0.4rem;
+            margin-top: 1rem;
+        }
+
+        .btn .bx {
+            font-size: 1.2rem;
+        }
+
+        .btn:hover {
+            background: #546eff;
+            transition: 0.3s all linear;
+        }
+
+        .about-text p {
+            font-size: 0.938rem;
+            letter-spacing: 1px;
+            text-align: justify;
+            margin-bottom: 1.5rem;
+        }
+
+        /*===== Services =====*/
+        .services-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .services-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 15px;
+            background: var(--container-color);
+            border-radius: 0.4rem;
+            transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+        .services-box:hover {
+            transform: scale(1.05);
+            transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+        .services-box .bx {
+            font-size: 1.4rem;
+            color: var(--main-color);
+            padding: 10px;
+            border-radius: 5rem;
+            border: 2px dashed var(--bg-color);
+        }
+
+        .services-box h2 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 0.5rem 0;
+            color: var(--main-color);
+        }
+
+        p {
+            font-size: 0.6rem;
+            font-weight: 300;
+        }
+
+        /*===== Portfolio =====*/
+        .portfolio-content {
+            display: contents;
+            /*grid-template-columns: repeat(2,1fr);*/
+            gap: 2rem;
+        }
+
+        .portfolio-box {
+            position: relative;
+            width: 100%;
+            height: 320px;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: hsl(234, 45%, 16%, 0.8);
+        }
+
+        .portfolio-overlay h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-overlay .bx {
+            font-size: 24px;
+            padding: 10px;
+            background: var(--main-color);
+            color: var(--bg-color);
+            border-radius: 4px;
+        }
+
+        .portfolio-overlay .bx:hover {
+            background: #546eff;
+            transition: 0.3s all linear;
+        }
+
+        .portfolio-box:hover .portfolio-overlay {
+            top: 0;
+            transition: 0.3s all ease;
+        }
+
+        /* Projects */
+        .projects-content {
+            display: grid;
+            grid-template-columns: repeat(3, 200px);
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .project-box {
+            padding: 20px 10px;
+            background: var(--box-color);
+            border-radius: 0.4rem;
+            text-align: center;
+        }
+
+        .project-box h2 {
+            font-size: 1.2rem;
+        }
+
+        .project-box span {
+            font-size: 0.845rem;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: auto;
+            width: 100%;
+            display: grid;
+            row-gap: 1rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            border: none;
+            outline: none;
+            font-size: 0.9rem;
+            padding: 15px;
+            color: var(--bg-color);
+            background: var(--box-color);
+            border-radius: 0.4rem;
+        }
+
+        .contact-form .send-btn {
+            width: 120px;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            font-weight: 500;
+            text-transform: uppercase;
+            padding: 12px;
+            background: var(--main-color);
+            cursor: pointer;
+        }
+
+        /* Footer */
+        .footer {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            row-gap: 1.4rem;
+            padding: 30px 0;
+        }
+
+        .footer p {
+            font-size: 0.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            align-items: center;
+            column-gap: 1rem;
+        }
+
+        .footer-links a {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--bg-color);
+        }
+
+        .footer-links a:hover {
+            color: var(--main-color);
+            transition: 0.3s all linear;
+        }
+
+        /* Scroll top */
+        .scroll-top {
+            position: fixed;
+            bottom: -100%;
+            right: 1.5rem;
+            z-index: 100;
+        }
+
+        .scroll-top .bx {
+            padding: 8px;
+            font-size: 1.3rem;
+            color: var(--bg-color);
+            background: var(--box-color);
+            border-radius: 0.2rem;
+        }
+
+        .scroll-top .bx:hover {
+            background: var(--container-color);
+            transition: 0.3s;
+        }
+
+        .scroll-active {
+            bottom: 2rem;
+            transition: 0.3s;
+        }
+
+
+        /* Media Query */
+        @media (max-width:990px) {
+            .container {
+                margin: 0 auto;
+                width: 90%;
+            }
+        }
+
+        @media (max-width:892px) {
+            section {
+                padding: 2rem 0;
+            }
+
+            .nav {
+                padding: 12px 0;
+            }
+
+            .heading {
+                font-size: 4rem;
+            }
+
+            .portfolio-box {
+                height: 257px;
+            }
+        }
+
+        @media (max-width:775px) {
+            .logo {
+                font-size: 1.1rem;
+            }
+
+            .home {
+                min-height: 500px;
+                padding-top: 6rem;
+            }
+
+            .home-text h3 {
+                font-size: 1rem;
+            }
+
+            .home-text h2 {
+                font-size: 3rem;
+                line-height: 3.8rem;
+            }
+
+            .home-text p {
+                font-size: 0.825rem;
+            }
+
+            .services-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .portfolio-box {
+                height: 245px;
+            }
+
+            .menu-icon {
+                display: flex;
+            }
+
+            .navbar {
+                position: absolute;
+                top: 0;
+                right: -100%;
+                width: 300;
+                height: 100vh;
+                background: var(--box-color);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 50px 20px;
+                transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+            }
+
+            .open-menu {
+                right: 0;
+                transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+            }
+
+            .nav-link {
+                display: block;
+                margin: 1rem 0;
+            }
+        }
+
+        @media (max-width:775px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-data span {
+                font-size: 0.9rem;
+            }
+
+            .about-data h2 {
+                font-size: 1.7rem;
+                line-height: 2.3rem;
+                font-weight: 600;
+                margin: 0.8rem 0;
+            }
+
+            .about-text p {
+                font-size: 0.825rem;
+                letter-spacing: 1px;
+            }
+
+            .projects-content {
+                grid-template-columns: repeat(2, 200px);
+            }
+        }
+
+        @media (max-width: 450px) {
+            .home {
+                min-height: 485px;
+                padding-top: 5rem;
+            }
+
+            .home-img {
+                width: 140px;
+                height: 140px;
+            }
+
+            .home-text h2 {
+                font-size: 2.1rem;
+                line-height: 3.2rem;
+            }
+
+            .home-text p br {
+                display: contents;
+            }
+
+            .heading {
+                font-size: 3rem;
+            }
+
+            .about-data {
+                font-size: 1.5rem;
+                line-height: 2.1rem;
+                margin: 0.6rem 0;
+            }
+
+            .services-content,
+            .portfolio-content,
+            .projects-content {
+                grid-template-columns: 1fr;
+            }
+
+            .review-box .review-text {
+                font-size: 0.82rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                row-gap: 1rem;
+            }
+        }
+
+        @media (max-width: 325px) {
+            .navbar {
+                width: 100%;
+            }
+
+            .portfolio-box {
+                height: 190px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Scrol Top -->
+    <a href="#home" class="scroll-top">
+        <i class='bx bxs-chevrons-up'></i>
+    </a>
+    <!-- Header -->
+    <header>
+        <!-- Navigation -->
+        <div class="nav container">
+            <!-- Logo -->
+            <a href="#" class="logo">ABIR GHOSH</a>
+            <!-- Navbar -->
+            <ul class="navbar">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <!-- Menu Icon -->
+            <div class="menu-icon">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </header>
+    <!-- Home -->
+    <section class="home container" id="home">
+        <div class="home-content">
+            <div class="home-img">
+                <img src="a1.jpg"
+                    alt="">
+            </div>
+            <div class="home-text">
+                <h3>Hello</h3>
+                <h2>I'm <span class="color-font">ABIR GHOSH</span></h2>
+                <p>Developer, still learning <span class="color"> C.S.E.( COMPUTER SCIENCE Engineering )</span>,
+                    creativity starts from <span class="color"> INOVATION IDEA'S </span>. You can call me ABIR.
+                    I'm <span class="color">College Student</span> of Bengal College of Engineering and Technology. I'am
+                    a <span class="color"> JUNIOR SCIENTIST</span>
+                    <br> Here's a bit more <span class="color"> about me. </span>
+                </p>
+                <!-- Social -->
+                <div class="social">
+                    <a href="mailto:ghoshabir116@gmail.com"><i class='bx bx-envelope'></i></a>
+                    <a href="https://www.instagram.com/abir_ghosh_2022/"><i class='bx bxl-instagram'></i></a>
+                    <a href="https://wa.me/+918001087752?text=Hi%20%2C%20abir%20Ghose.%0AHow%20are%20you%3F"><i
+                            class='bx bxl-whatsapp'></i></a>
+                    <a
+                        href="https://www.google.com/search?q=abir+ghosh+women+safety+device&client=ms-android-samsung-ss&sourceid=chrome-mobile&ie=UTF-8"><i
+                            class='bx bxl-google'></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100043386042132"><i
+                            class='bx bxl-facebook'></i></a>
+                    <a href="https://youtube.com/channel/UCsHFXk-orgsWLwncF8PFqig"><i class='bx bxl-youtube'></i></a>
+                    <a href="tel:+918001087752"><i class='bx bx-phone-outgoing'></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Me -->
+    <section class="about container" id="about">
+        <!-- Heading -->
+        <h2 class="heading">about</h2>
+        <!-- About Content -->
+        <div class="about-content">
+            <div class="about-data">
+                <span>About Me</span>
+                <h2>Web Developer, <br>
+                    UI/UX & Web Designer</h2>
+                <a href="https://youtube.com/channel/UCsHFXk-orgsWLwncF8PFqig" class="btn">
+                    Download CV
+                    <i class='bx bx-download'></i>
+                </a>
+            </div>
+            <div class="about-text">
+                <p>Hello! I am Abir Ghosh. JUNIOR SCIENTIST, C.S.E.(COMPUTER SCIENCE STUDENT) and INVENTOR.</p>
+                <p>I just want to show my abilities and progress for myself and the environment around me.</p>
+                <p>working new invention.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Services-->
+    <section class="services container" id="services">
+        <!-- Heading -->
+        <h2 class="heading">Services</h2>
+        <!-- Services Content -->
+        <div class="services-content">
+            <div class="services-box">
+                <i class='bx bx-code-alt'></i>
+                <h2>JUNIOR SCIENTIST</h2>
+                <p class="explanation">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt reiciendis omnis
+                    aut, culpa qui tempora, corporis, quod quasi dolores obcaecati quisquam explicabo officia fugit quo
+                    earum reprehenderit vel ducimus. Asperiores ea nobis nisi dignissimos, reiciendis itaque placeat
+                    facilis quisquam pariatur architecto dolores expedita? Doloribus, dignissimos.</p>
+            </div>
+            <div class="services-box">
+                <i class='bx bx-edit'></i>
+                <h2>SOFTWARE ENGINEER</h2>
+                <p class="explanation">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, ipsa at rerum
+                    accusamus facere excepturi blanditiis perspiciatis a delectus ullam sit optio qui voluptate
+                    molestiae fugiat ad! Quidem animi, ipsum sed sunt neque ducimus ex voluptates voluptas fuga deleniti
+                    quae, adipisci pariatur laudantium praesentium labore.</p>
+            </div>
+            <div class="services-box">
+                <i class='bx bx-pencil'></i>
+                <h2>INVENTION</h2>
+                <p class="explanation">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque nisi iusto enim
+                    beatae laudantium deleniti amet suscipit saepe natus a reiciendis fugit alias tempore asperiores
+                    quas omnis perspiciatis voluptatem, magnam provident officiis itaque eum. Sint mollitia quae
+                    doloremque nostrum expedita eum at laboriosam! Odit, accusamus.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Portfolio -->
+    <section class="portfolio container" id="portfolio">
+        <!-- Heading -->
+        <h2 class="heading"> Portfolio </h2>
+        <!-- Portfolio Content -->
+        <div class="portfolio-content">
+            <div class="portfolio-box">
+                <img src="a2.jpg"
+                    style="height: 100%; width: 100%;" alt="" class="portfolio-img">
+                <!-- Overlay -->
+                <div class="portfolio-overlay">
+                    <h2> C.S.E.(COMPUTER SCIENCE ENGINEERING) Student </h2>
+                    <a
+                        href="https://bcetdgp.ac.in/HTML/CIVIL/index.html#:~:text=Success%20Stories,protect%20women%20across%20the%20country.">
+                        <i class='bx bx-link-alt'></i>
+                    </a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="a5.jpg"
+                    style="height: 100%; width: 100%;" alt="" class="portfolio-img">
+                <!-- Overlay -->
+                <div class="portfolio-overlay">
+                    <h2> MOTIVATIONAL SPEAKER </h2>
+                    <a href="https://youtube.com/channel/UCsHFXk-orgsWLwncF8PFqig">
+                        <i class='bx bx-link-alt'></i>
+                    </a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="a3.jpg"
+                    style="height: 130%; width: 100%;" alt="" class="portfolio-img">
+                <!-- Overlay -->
+                <div class="portfolio-overlay"> 
+                    <h2> india book of records</h2>
+                    <a href="https://indiabookofrecords.in/innovative-women-safety-band-device-designed-by-a-teen/">
+                        <i class='bx bx-link-alt'></i>
+                    </a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="a4.jpg"
+                    style="height: 100%; width: 100%;" alt="" class="portfolio-img">
+                <!-- Overlay -->
+                <div class="portfolio-overlay">
+                    <h2> asia book of records</h2>
+                    <a href="https://www.uttarbangasambad.com/tag/abir-ghosh/">
+                        <i class='bx bx-link-alt'></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Projects -->
+    <section class="projects container" id="projects">
+        <!-- Heading -->
+        <h2 class="heading"> Projects </h2>
+        <!-- Projects Content -->
+        <div class="projects-content">
+            <div class="project-box">
+                <h2>10</h2>
+                <span>Projects Completed</span>
+            </div>
+            <div class="project-box">
+                <h2>8</h2>
+                <span>Learning Experience Certificate</span>
+            </div>
+            <div class="project-box">
+                <h2>1</h2>
+                <span>Official Sertificate </span>
+            </div>
+        </div>
+    </section>
+    <!-- Contact from -->
+    <section class="contact container" id="contact">
+        <!-- Heading -->
+        <h2 class="heading">Contact</h2>
+        <!-- Contact Form -->
+        <form action="mailto:ghoshabir116@gmail.com" method="post" enctype="text/plain" class="contact-form"
+            id="contact-form">
+            <input type="text" placeholder="Your Name" class="name" required>
+            <input type="email" name="" id="" placeholder="Email address..." class="email" required>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Write message here..." class="message"
+                required></textarea>
+            <input type="submit" value="Send" class="send-btn">
+        </form>
+    </section>
+    <!-- Footer -->
+    <section class="footer container" id="footer">
+        <div class="social">
+            <a href="mailto:ghoshabir116@gmail.com"><i class='bx bx-envelope'></i></a>
+            <a href="https://www.instagram.com/abir_ghosh_2022/"><i class='bx bxl-instagram'></i></a>
+            <a href="https://wa.me/+918001087752?text=Hi%20%2C%20abir%20Ghose.%0AHow%20are%20you%3F"><i
+                    class='bx bxl-whatsapp'></i></a>
+            <a
+                href="https://www.google.com/search?q=abir+ghosh+women+safety+device&client=ms-android-samsung-ss&sourceid=chrome-mobile&ie=UTF-8"><i
+                    class='bx bxl-google'></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100043386042132"><i class='bx bxl-facebook'></i></a>
+            <a href="https://youtube.com/channel/UCsHFXk-orgsWLwncF8PFqig"><i class='bx bxl-youtube'></i></a>
+            <a href="tel:+918001087752"><i class='bx bx-phone-outgoing'></i></a>
+        </div>
+        <div class="footer-links">
+            <p><a href="tel:+918001087752">call : +91 80010 87752 </a></p>
+        </div>
+        <!-- Footer Links -->
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms Of Use</a>
+            <a href="#">Disclaimer</a>
+        </div>
+        <!-- Copyright -->
+        <p>&#169; 2022 abir. thank you for visiting my website</p>
+    </section>
+    <!-- Email Js Link -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("5cWzVUJhFznRqUqrw");
+        })();
+    </script>
+    <!-- Sweet Alert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- ===== JS ===== -->
+    <script>
+        let menu = document.querySelector('.menu-icon');
+        let navbar = document.querySelector('.navbar');
+        menu.onclick = () => {
+            navbar.classList.toggle('open-menu');
+            menu.classList.toggle("move");
+        };
+        window.onscroll = () => {
+            navbar.classList.remove("open-menu");
+            menu.classList.remove("move");
+        }
+        // Email JS
+        function validate() {
+            let name = document.querySelector(".name");
+            let email = document.querySelector(".email");
+            let msg = document.querySelector(".message");
+            let sendBtn = document.querySelector(".send-btn");
+
+            sendBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (name.value == "" || email.value == "" || msg.value == "") {
+                    emptyerror();
+                } else {
+                    sendmail(name.value, email.value, msg.value);
+                    success();
+                    name.value = "";
+                    email.value = "";
+                    msg.value = "";
+                }
+            });
+        }
+        validate();
+
+        function sendmail(name, email, msg) {
+            emailjs.send("service_b6wk3ux", "template_e9w7mw8", {
+                to_name: email,
+                from_name: name,
+                message: msg,
+            });
+        }
+
+        function emptyerror() {
+            swal({
+                title: "Oh No...",
+                text: "Fields can't be empty!",
+                icon: "error",
+            });
+        }
+        function success() {
+            swal({
+                title: "Email sent successfully",
+                text: "We try to reply in 24 hours",
+                icon: "success",
+            });
+        }
+        // Header background change On Scroll
+        let header = document.querySelector("header");
+        window.addEventListener("scroll", () => {
+            header.classList.toggle("header-active", window.scrollY > 0);
+        });
+        // Scroll Top
+        let scrollTop = document.querySelector(".scroll-top");
+
+        window.addEventListener("scroll", () => {
+            scrollTop.classList.toggle("scroll-active", window.scrollY >= 400);
+        });
+    </script>
+    <!-- ===== MIXITUP FILTER ===== -->
+    <script src="js/mixitup.min.js"></script>
+
+</body>
+
+</html>
